@@ -1,4 +1,4 @@
-# SoftGames Assignment
+# Assignment
 
 Do the following to run the Project on Local
 1. npm install
