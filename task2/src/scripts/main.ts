@@ -1,5 +1,5 @@
 import { Engine } from "./Engine";
-import { GLUtiles } from "./GLUtiles";
+import { GLUtiles } from "./Core/GLUtiles";
 
 export let canvas : HTMLCanvasElement;
 canvas = GLUtiles.getCanvasElement("gameCanvas");

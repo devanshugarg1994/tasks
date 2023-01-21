@@ -1,4 +1,4 @@
-import { glContext } from "./Engine";
+import { glContext } from "../Engine";
 
 export class ShaderProgram {
     private static _Tag: string = "ShaderProgram"

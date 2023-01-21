@@ -1,6 +1,7 @@
 import { glMatrix, mat4 } from "gl-matrix";
-import { ShaderProgram } from "./ShaderProgram";
-import { Task } from "./Task";
+import { IndexBuffer } from "./Core/IndexBuffer";
+import { ShaderProgram } from "./Core/ShaderProgram";
+import { VertexBuffer } from "./Core/VertexBuffer";
 
 export let glContext: WebGLRenderingContext;
 export class Engine {
@@ -10,11 +11,8 @@ export class Engine {
         this._canvas = canvas;
         this.setGlContext();
         this.resize();
-
         window.addEventListener("resize", this.resize.bind(this));
         glContext.viewport(0, 0, this._canvas.width, this._canvas.height);
-        this.task = new Task();
-
     }
 
 
@@ -47,7 +45,7 @@ export class Engine {
         glContext.enable(glContext.CULL_FACE);
         glContext.frontFace(glContext.CCW);
         glContext.cullFace(glContext.BACK);
-        glContext.bindBuffer(glContext.ARRAY_BUFFER, this._vertexBuffer);
+        this._indexBuffer.bindBuffer();
 
         // adding position to respective attributes
         const positionAttribLocation = this._shaderProgram.getAttribLocation("a_position")
@@ -60,7 +58,9 @@ export class Engine {
         glContext.enableVertexAttribArray(colorAttribLocation);
 
         const angle = performance.now() / 1000 / 6 * 2 * Math.PI;
-        mat4.rotate(this.worldMatrix, mat4.identity(new Float32Array(16)), angle, [0, 1, 0]);
+        mat4.rotate(this.yRotationMatrix, this.identityMatrix, angle, [0, 1, 0]);
+        mat4.rotate(this.xRotationMatrix, this.identityMatrix, angle /4, [1, 0, 0]);
+        mat4.mul(this.worldMatrix,this.yRotationMatrix, this.xRotationMatrix);
         glContext.uniformMatrix4fv(this._shaderProgram.getUniformLocation("mWorld"), false, this.worldMatrix)
         glContext.drawElements(glContext.TRIANGLES,this.boxIndices.length, glContext.UNSIGNED_SHORT, 0);
         // this.task.loop();
@@ -161,15 +161,15 @@ export class Engine {
             22, 20, 23
         ];
 
-        this._vertexBuffer = glContext.createBuffer() as WebGLBuffer;
-        glContext.bindBuffer(glContext.ARRAY_BUFFER, this._vertexBuffer);
-        glContext.bufferData(glContext.ARRAY_BUFFER, new Float32Array(boxVertices), glContext.STATIC_DRAW);
 
-        this._indexBuffer = glContext.createBuffer() as WebGLBuffer;
-        glContext.bindBuffer(glContext.ELEMENT_ARRAY_BUFFER, this._indexBuffer);
-        glContext.bufferData(glContext.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.boxIndices), glContext.STATIC_DRAW)
+        this._vertexBuffer = new VertexBuffer(boxVertices);
+        this._indexBuffer = new IndexBuffer(this.boxIndices);
+        this.bindUniforms();
+
+    }
 
 
+    private bindUniforms() {
         const matWorldUniformLocation = this._shaderProgram.getUniformLocation('mWorld');
         const matViewdUniformLocation = this._shaderProgram.getUniformLocation('mView');
         const matProjectionUniformLocation = this._shaderProgram.getUniformLocation('mProjection');
@@ -178,6 +178,7 @@ export class Engine {
         this.worldMatrix = new Float32Array(16);
         this.viewMatrix = new Float32Array(16);
         this.projectionMatrix = new Float32Array(16);
+
         mat4.identity(this.worldMatrix);
         mat4.lookAt(this.viewMatrix, [0, 0, -8], [0, 0, 0], [0, 1, 0]);
         mat4.identity(this.projectionMatrix);
@@ -186,17 +187,22 @@ export class Engine {
         glContext.uniformMatrix4fv(matViewdUniformLocation, false, this.viewMatrix);
         glContext.uniformMatrix4fv(matProjectionUniformLocation, false, this.projectionMatrix);
 
-
+        this.xRotationMatrix = new Float32Array(16);
+        this.yRotationMatrix = new Float32Array(16);
+        this.identityMatrix = new Float32Array(16);
+        mat4.identity(this.identityMatrix);
     }
 
     private _width: number;
     private _height: number;
     private _canvas: HTMLCanvasElement;
-    private task: Task;
-    private _shaderProgram!: ShaderProgram;
-    private _vertexBuffer!: WebGLBuffer;
-    private _colorBuffer!: WebGLBuffer;
-    private _indexBuffer: WebGLBuffer;
+    private _shaderProgram: ShaderProgram;
+    private _vertexBuffer: VertexBuffer;
+    private _indexBuffer: IndexBuffer;
+
+    private xRotationMatrix: Float32Array;
+    private yRotationMatrix: Float32Array; 
+    private identityMatrix: Float32Array;
 
     private worldMatrix: mat4;
     private viewMatrix: mat4;
