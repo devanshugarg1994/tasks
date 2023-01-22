@@ -1,4 +1,4 @@
-import { Circle } from "./Block";
+import { Circle } from "./Circles";
 
 export class Task {
     constructor(ctx: CanvasRenderingContext2D, canvasWidth: number, canvasHeight: number) {
@@ -10,7 +10,7 @@ export class Task {
     start() {
 
         for (let i: number = 0; i < 3; i++) {
-            this._circles.push(new Circle(this._defualtContext, 50, (150 * i) + 100, 50, "red"));
+            this._circles.push(new Circle(this._defualtContext, 50, (150 * i) + 100, 50, this._color[i]));
         }
 
         this._circles[0].setIsMoving(true);
@@ -40,4 +40,6 @@ export class Task {
     private _width: number;
     private _height: number;
     private _circles: Circle[] = [];
+
+    private _color: string [] = ["green","red", "blue"]
 }

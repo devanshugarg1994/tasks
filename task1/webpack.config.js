@@ -35,9 +35,8 @@ const config = {
     plugins: [
         new CleanWebpackPlugin(),
         new CopyPlugin([
-            { from: 'src/index.html' },
-            { from: 'src/jsonfile', to: 'jsonfile/' }
-        ]),
+            { from: 'src/index.html' }
+                ]),
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
