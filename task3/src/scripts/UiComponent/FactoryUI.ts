@@ -14,6 +14,9 @@ import { Label } from "./Label";
 import { BasicNode } from "./BasicNode";
 import { Shape } from "./Shape";
 import { ShapeButton } from "./ShapeButton";
+import { Sprite } from "./Sprite";
+import { Button } from "./Button";
+import { Meter } from "./Meter";
 
 
 export class FactoryUI {
@@ -32,6 +35,15 @@ export class FactoryUI {
                     break;
                 case "shapebutton":
                     this.createshapeButton(obj, view);
+                    break;
+                case "image":
+                    this.createSprite(obj, view);
+                    break;
+                case "button":
+                    this.createButton(obj, view);
+                    break;
+                case "meter":
+                    this.createMeter(obj, view);
                     break;
                 case "custom":
                     break;
@@ -68,6 +80,37 @@ export class FactoryUI {
         }
         view.setContainerRefrences(json.id, container);
 
+    } 
+    
+    static createMeter(json: any, view: BasicNode): void {
+        const meter: Meter = new Meter(json);
+        if (json.parent) {
+            view.getContainerRefrences(json.parent).addChild(meter);
+        } else {
+            view.addChild(meter);
+        }
+        view.setMeterRefrences(json.id, meter);
+
+    }
+
+    static createSprite(json: any, view: BasicNode): void {
+        const sprite: Sprite = new Sprite(json);
+        if (json.parent) {
+            view.getContainerRefrences(json.parent).addChild(sprite);
+        } else {
+            view.addChild(sprite);
+        }
+        view.setSpriteRefrences(json.id, sprite);
+    }
+
+    static createButton(json: any, view: BasicNode): void {
+        const button: Button = new Button(json);
+        if (json.parent) {
+            view.getContainerRefrences(json.parent).addChild(button);
+        } else {
+            view.addChild(button);
+        }
+        view.setButtonRefrences(json.id, button);
     }
 
 

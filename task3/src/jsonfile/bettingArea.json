@@ -1,0 +1,127 @@
+{
+    "bettingArea": {
+        "bettingAreaContainer": {
+            "x": 0,
+            "y": 0,
+            "id": "bettingAreaContainer",
+            "type": "container"
+        },
+
+        "tieBetBtn": {
+            "x": 0,
+            "y": 14,
+            "w": 160,
+            "h": 64,
+            "type": "shapeButton",
+            "id": "tieBetBtn",
+            "shape": {
+                "x": 0,
+                "y": 0,
+                "w": 160,
+                "h": 64,
+                "pivotX": 80,
+                "pivotY": 32,
+                "id": "button1Shape",
+                "type": "shape",
+                "interactive": true,
+                "buttonMode": true,
+                "fillColor": "#FF0000",
+                "alpha": 0.7
+            },
+            "label": {
+                "x": 0,
+                "y": 0,
+                "w": 160,
+                "h": 64,
+                "id": "tieBetBtnLabel",
+                "text": "TIE",
+                "style": {
+                    "fontFamily": "Arial",
+                    "fontSize": 75,
+                    "fill": "0xfada5e",
+                    "align": "center",
+                    "fontWeight": 100
+                }
+            },
+            "parent": "bettingAreaContainer"
+        },
+        
+        "bankerBetBtn": {
+            "x": 0,
+            "y": 90,
+            "w": 160,
+            "h": 64,
+            "type": "shapeButton",
+            "id": "bankerBetBtn",
+            "shape": {
+                "x": 0,
+                "y": 0,
+                "w": 160,
+                "h": 64,
+                "pivotX": 80,
+                "pivotY": 32,
+                "id": "button1Shape",
+                "type": "shape",
+                "interactive": true,
+                "buttonMode": true,
+                "fillColor": "#FF0000",
+                "alpha": 0.7
+            },
+            "label": {
+                "x": 0,
+                "y": 0,
+                "w": 160,
+                "h": 64,
+                "id": "banketBetBtnLabel",
+                "text": "BANKER",
+                "style": {
+                    "fontFamily": "Arial",
+                    "fontSize": 75,
+                    "fill": "0xfada5e",
+                    "align": "center",
+                    "fontWeight": 100
+                }
+            },
+            "parent": "bettingAreaContainer"
+        },
+        
+        "playerBetBtn": {
+            "x": 0,
+            "y": 165,
+            "w": 160,
+            "h": 64,
+            "type": "shapeButton",
+            "id": "playerBetBtn",
+            "shape": {
+                "x": 0,
+                "y": 0,
+                "w": 160,
+                "h": 64,
+                "pivotX": 80,
+                "pivotY": 32,
+                "id": "button1Shape",
+                "type": "shape",
+                "interactive": true,
+                "buttonMode": true,
+                "fillColor": "#FF0000",
+                "alpha": 0.7
+            },
+            "label": {
+                "x": 0,
+                "y": 0,
+                "w": 160,
+                "h": 64,
+                "id": "playetBetBtnLabel",
+                "text": "PLAYER",
+                "style": {
+                    "fontFamily": "Arial",
+                    "fontSize": 75,
+                    "fill": "0xfada5e",
+                    "align": "center",
+                    "fontWeight": 100
+                }
+            },
+            "parent": "bettingAreaContainer"
+        }
+    }
+}

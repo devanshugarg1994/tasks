@@ -1,0 +1,30 @@
+{
+    "preLoadresources": [
+        "../jsonfile/performance.json",
+        "../jsonfile/mainScene.json",
+
+        "../jsonfile/bet.json",
+        "../jsonfile/bettingArea.json",
+        "../jsonfile/betCoinAddedGeneric.json",
+        "../jsonfile/gameMeter.json",
+        "../jsonfile/cardDeck.json",
+        "../jsonfile/cardshow.json",
+
+        "../images/buttons/lastBetCoin.png",
+        "../images/buttons/nextBetCoin.png",
+        "../images/buttons/clearBet.png",
+
+        "../images/buttons/dealBtn.png",
+        "../images/coins/fiveHundredBet.png",
+        "../images/coins/hundredBet.png",
+        "../images/coins/oneBet.png",
+        "../images/coins/tenBet.png",
+        "../images/coins/thousandBet.png",
+
+        "../images/gamePlay/base.png",
+        "../images/gamePlay/felt_highl_bet_bankerP.png",
+        "../images/gamePlay/felt_highl_win_playerP.png",
+        "../images/gamePlay/flippedCard.png"
+
+    ]
+}

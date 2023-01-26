@@ -7,6 +7,7 @@ export class ShapeButton extends Container {
         super(json);
         this.x = json.x;
         this.y = json.y;
+        this.id = json.id;
         json.pivot && (this.pivot.set(json.pivot, json.pivot));
         (json.pivotX && json.pivotY) && (this.pivot.set(json.pivotX, json.pivotY));
         if(typeof json.visible === "boolean") {
@@ -20,9 +21,26 @@ export class ShapeButton extends Container {
         this.label = new Label(json.label);
         this.addChild(this.shape);
         this.addChild(this.label);
+        
+    }
+
+    
+    public registerEvent(key: string, callback: Function) {
+        this.unRegister(key, callback);
+        this.shape.on(key, (event?: Event) => {
+            callback && callback(event);
+        });
+    }
+
+    public unRegister(key: string, callback: Function) {
+        this.shape.off(key, () => {
+            callback && callback();
+        });
     }
 
 
     protected shape: Shape;
-    protected label: Label
+    protected label: Label;
+
+    protected id: string;
 }

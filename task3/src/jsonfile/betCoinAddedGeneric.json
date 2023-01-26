@@ -1,0 +1,15 @@
+{
+    "betCoinAddedGeneric": {
+        "betCoin": {
+            "x": 32,
+            "y": -10,
+            "scale":0.75,
+         
+            "type": "image",
+            "id": "betCoin1",
+            "image": "oneBet",
+            "visible": false,
+            "parent": "betContainer"
+        }
+    }
+}

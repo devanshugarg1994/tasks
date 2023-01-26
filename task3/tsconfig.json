@@ -2,11 +2,12 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "removeComments": true, 
+        "removeComments": true,
         "strict": true,
         "noUnusedParameters": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
+        "strictPropertyInitialization": false,
         "moduleResolution": "node"
     }
 }

@@ -1,0 +1,95 @@
+{
+    "bet": {
+        "betContainer": {
+            "x": 0,
+            "y": 0,
+            "id": "betContainer",
+            "type": "container"
+        },
+        "lastBetCoin": {
+            "x": -100,
+            "y": 215,
+            "scaleX": 0.1,
+            "scaleY": 0.1,
+            "type": "button",
+            "id": "lastBetCoin",
+            "image": "lastBetCoin",
+            "parent": "betContainer"
+        },
+        "nextBetCoin": {
+            "x": 50,
+            "y": 215,
+            "scaleX": 0.1,
+            "scaleY": 0.1,
+            "type": "button",
+            "id": "nextBetCoin",
+            "image": "nextBetCoin",
+            "parent": "betContainer"
+        },
+        "betCoin1": {
+            "x": -30,
+            "y": 205,
+            "type": "image",
+            "id": "betCoin1",
+            "image": "oneBet",
+            "visible": false,
+            "parent": "betContainer"
+        },
+        "betCoin2": {
+            "x": -30,
+            "y": 205,
+            "type": "image",
+            "id": "betCoin2",
+            "image": "tenBet",
+            "visible": false,
+            "parent": "betContainer"
+        },
+        "betCoin3": {
+            "x": -30,
+            "y": 205,
+            "type": "image",
+            "id": "betCoin3",
+            "image": "hundredBet",
+            "visible": false,
+            "parent": "betContainer"
+        },
+        "betCoin4": {
+            "x": -30,
+            "y": 205,
+            "type": "image",
+            "id": "betCoin4",
+            "image": "fiveHundredBet",
+            "visible": false,
+            "parent": "betContainer"
+        },
+        "betCoin5": {
+            "x": -30,
+            "y": 205,
+            "type": "image",
+            "id": "betCoin5",
+            "image": "thousandBet",
+            "visible": false,
+            "parent": "betContainer"
+        },
+        
+        "clearBet": {
+            "x": -164,
+            "y": 215,
+            "scaleX": 0.1,
+            "scaleY": 0.1,
+            "type": "button",
+            "id": "clearBet",
+            "image": "clearBet",
+            "parent": "betContainer"
+        },
+        
+        "dealBtn": {
+            "x": 200,
+            "y": 215,
+            "type": "button",
+            "id": "dealBtn",
+            "image": "dealBtn",
+            "parent": "betContainer"
+        }
+    }
+}

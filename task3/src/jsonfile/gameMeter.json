@@ -1,0 +1,129 @@
+{
+    "gameMeter": {
+        "gameMeterContainer": {
+            "x": 0,
+            "y": 0,
+            "id": "gameMeterContainer",
+            "type": "container"
+        },
+        "WinAmtTXt": {
+            "x": -300,
+            "y": 0,
+            "w": 400,
+            "h": 100,
+            "id": "WinAmtTXt",
+            "text": "WIN :",
+            "type": "label",
+            "visible": true,
+            "alpha": 1,
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "style": {
+                "fontFamily": "Arial",
+                "fontSize": 20,
+                "fill": "0xfada5e",
+                "align": "center",
+                "fontWeight": 100
+            },
+            "parent": "gameMeterContainer"
+        },
+        "WinAmtMeter": {
+            "x": -230,
+            "y": 0,
+            "w": 200,
+            "h": 50,
+            "id": "WinAmtMeter",
+            "type": "meter",
+            "visible": true,
+            "text": 0,
+            "style": {
+                "fontFamily": "Arial",
+                "fontSize": 20,
+                "fill": "0xfada5e",
+                "align": "center",
+                "fontWeight": 100
+            },
+            "parent": "gameMeterContainer"
+        },
+        "betAmtTxt": {
+            "x": -336,
+            "y": 40,
+            "w": 400,
+            "h": 100,
+            "id": "betAmtTxt",
+            "text": "TOTAL BET :",
+            "type": "label",
+            "visible": true,
+            "alpha": 1,
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "style": {
+                "fontFamily": "Arial",
+                "fontSize": 20,
+                "fill": "0xfada5e",
+                "align": "center",
+                "fontWeight": 100
+            },
+            "parent": "gameMeterContainer"
+        },
+        "betAmtMeter": {
+            "x": -230,
+            "y": 40,
+            "w": 200,
+            "h": 50,
+            "id": "betAmtMeter",
+            "type": "meter",
+            "visible": true,
+            "text": 0,
+            "style": {
+                "fontFamily": "Arial",
+                "fontSize": 20,
+                "fill": "0xfada5e",
+                "align": "center",
+                "fontWeight": 100
+            },
+            "parent": "gameMeterContainer"
+        },
+        
+        
+        "credirAmtTxt": {
+            "x": -320,
+            "y": 80,
+            "w": 400,
+            "h": 100,
+            "id": "credirAmtTxt",
+            "text": "CREDIT :",
+            "type": "label",
+            "visible": true,
+            "alpha": 1,
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "style": {
+                "fontFamily": "Arial",
+                "fontSize": 20,
+                "fill": "0xfada5e",
+                "align": "center",
+                "fontWeight": 100
+            },
+            "parent": "gameMeterContainer"
+        },
+        "creditAmtMeter": {
+            "x": -230,
+            "y": 80,
+            "w": 200,
+            "h": 50,
+            "id": "creditAmtMeter",
+            "type": "meter",
+            "visible": true,
+            "text": 100000,
+            "style": {
+                "fontFamily": "Arial",
+                "fontSize": 20,
+                "fill": "0xfada5e",
+                "align": "center",
+                "fontWeight": 100
+            },
+            "parent": "gameMeterContainer"
+        }
+    }
+}

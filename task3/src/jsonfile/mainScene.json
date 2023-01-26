@@ -1,0 +1,65 @@
+{
+    "mainScene": {
+        "mainSceneContainer": {
+            "x": 0,
+            "y": 0,
+            "id": "mainSceneContainer",
+            "type": "container"
+        },
+        "firstImage": {
+            "x": 0,
+            "y": 0,
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "scale": 3,
+            "id": "firstImage",
+            "type": "image",
+            "image": "base",
+            "parent": "mainSceneContainer"
+        },
+        "PLAYER": {
+            "x": -294,
+            "y": -180,
+            "w": 400,
+            "h": 100,
+            "id": "PLAYER",
+            "text": "PLAYER",
+            "type": "label",
+            "visible": true,
+            "alpha": 1,
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "style": {
+                "fontFamily": "Arial",
+                "fontSize": 30,
+                "fill": "0xfada5e",
+                "align": "center",
+                "fontWeight": 100
+            },
+            "parent": "mainSceneContainer"
+        },
+        "BANKER": {
+            "x": 100,
+            "y": -180,
+            "w": 400,
+            "h": 100,
+            "id": "BANKER",
+            "text": "BANKER",
+            "type": "label",
+            "visible": true,
+            "alpha": 1,
+            "anchorX": 0.5,
+            "anchorY": 0.5,
+            "style": {
+                "fontFamily": "Arial",
+                "fontSize": 30,
+                "fill": "0xfada5e",
+                "align": "center",
+                "fontWeight": 100
+            },
+            "parent": "mainSceneContainer"
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "cardshow": {
+        "cardData": {
+            "x": 270,
+            "y": -260,
+            "visible": false,
+            "type": "image",
+            "id": "cardData",
+            "image": "card1"
+        }
+    }
+}

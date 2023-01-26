@@ -15,12 +15,18 @@ import { Label } from "./Label";
 import { FactoryUI } from "./FactoryUI";
 import { Shape } from "./Shape";
 import { ShapeButton } from "./ShapeButton";
+import { Sprite } from "./Sprite";
+import { Button } from "./Button";
+import { Meter } from "./Meter";
 
 export class BasicNode extends PIXI.Container {
     private containerReferences: { [key: string]: Container } = {};
     private labelReferences: { [key: string]: Label } = {};
     private shapeReferences: { [key: string]: Shape } = {};
     private shapeButtonReferences: { [key: string]: ShapeButton } = {};
+    private spriteRefrences: { [key: string]: Sprite } = {};
+    private buttonRefrences: { [key: string]: Button } = {};
+    private meterRefrences: { [key: string]: Meter } = {};
     
     constructor(json: any) {
         super()
@@ -71,6 +77,27 @@ export class BasicNode extends PIXI.Container {
     }
     public getContainerRefrences(id: string): Container {
         return this.containerReferences[id];
+    }
+
+    public setSpriteRefrences(id: string, sprite: Sprite) {
+        this.spriteRefrences[id] = sprite;
+    }
+    public getSpriteRefrences(id: string): Sprite {
+        return this.spriteRefrences[id];
+    }
+
+    public setButtonRefrences(id: string, button: Button) {
+        this.buttonRefrences[id] = button;
+    }
+    public getButtonRefrences(id: string): Button {
+        return this.buttonRefrences[id];
+    } 
+    
+    public setMeterRefrences(id: string, button: Meter) {
+        this.meterRefrences[id] = button;
+    }
+    public getMeterRefrences(id: string): Meter {
+        return this.meterRefrences[id];
     }
 
 

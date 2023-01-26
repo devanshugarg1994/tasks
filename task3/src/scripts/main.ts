@@ -17,13 +17,13 @@ window.PIXI = PIXI;
 import { Application } from "./Engine/Application";
 import { Loader } from "./Engine/Loader";
 
-// @ts-ignore               
 export  const game = new Application();
 window.game = game;
 
 const loader = new Loader();
 
 loader.loadMainManifest([Assets.MainManifsetPath, Assets.LoadingUiPath]);
+
 
 
 
